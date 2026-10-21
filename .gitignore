@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+build/
+
+# Env / secrets (NE JAMAIS pousser)
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# Build / archives
+*.tar.gz
+*.bak
+*.bak-*
+*.old*
+/next.config.ts.bak-preprod-20261022
+
+# System
+.DS_Store
+*.log
+npm-debug.log*
+
+# Database
+*.sql
+db/*.sql

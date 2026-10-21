@@ -1,0 +1,55 @@
+/* SKORM motion: progressive enhancement, transforms and opacity only for ambient effects. */
+.noir-theme .noir-motion-toggle{flex:0 0 29px;display:grid;place-items:center;width:29px;height:29px;padding:0;border:1px solid #3b7b9660!important;border-radius:50%!important;background:transparent!important;color:#a7c4d2!important;box-shadow:none!important;transition:color .2s,border-color .2s!important}
+.noir-theme .noir-motion-toggle:hover{color:#32c8f5!important;border-color:#32c8f5!important}.noir-motion-toggle:disabled{cursor:default;opacity:.45}
+.noir-header{column-gap:24px}.noir-header .noir-language{margin-left:15px}
+
+@media(prefers-reduced-motion:no-preference){
+  [data-noir-motion=on] [data-noir-reveal]{transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),border-color .25s,box-shadow .3s;transition-delay:var(--noir-reveal-delay,0ms),var(--noir-reveal-delay,0ms),0ms,0ms}
+  [data-noir-motion=on] [data-noir-reveal=pending]{opacity:0;transform:translate3d(0,24px,0)}
+  [data-noir-motion=on] [data-noir-reveal=shown]{opacity:1;transform:translate3d(0,0,0)}
+  [data-noir-motion=on] .noir-hero-visual img{animation:noir-scene-drift 24s ease-in-out infinite alternate;transform-origin:70% 45%}
+  [data-noir-motion=on] .noir-hero-orbit{animation:noir-orbit-drift 22s ease-in-out infinite alternate}
+  [data-noir-motion=on] .noir-hero-copy>*{animation:noir-copy-arrive .85s cubic-bezier(.22,1,.36,1) both}
+  [data-noir-motion=on] .noir-hero-copy>h1{animation-delay:.1s}
+  [data-noir-motion=on] .noir-hero-copy>.noir-hero-description{animation-delay:.2s}
+  [data-noir-motion=on] .noir-hero-copy>.noir-hero-actions{animation-delay:.3s}
+  [data-noir-motion=on] .noir-scroll>span svg{animation:noir-scroll-cue 2.8s ease-in-out infinite}
+  [data-noir-motion=on] .noir-services .noir-service-art{animation:noir-service-float 18s ease-in-out infinite alternate}
+  [data-noir-motion=on] .noir-service-art>span{animation:noir-light-breathe 4s ease-in-out infinite}
+  [data-noir-motion=on] .noir-section-head[data-noir-reveal=shown] .noir-line-label::before{animation:noir-line-arrive .8s cubic-bezier(.22,1,.36,1) both;transform-origin:left}
+  .noir-hero[data-noir-active=false] .noir-hero-visual img,.noir-hero[data-noir-active=false] .noir-hero-orbit,.noir-hero[data-noir-active=false] .noir-scroll>span svg,.noir-services[data-noir-active=false] .noir-service-art,.noir-services[data-noir-active=false] .noir-service-art>span{animation-play-state:paused}
+  [data-noir-tab=hidden] .noir-theme *{animation-play-state:paused!important}
+  [data-noir-motion=on] .noir-text-link svg,[data-noir-motion=on] .noir-button svg,[data-noir-motion=on] .noir-guide-grid>a>svg{transition:transform .3s cubic-bezier(.22,1,.36,1)}
+  [data-noir-motion=on] .noir-text-link:hover svg,[data-noir-motion=on] .noir-button:hover svg,[data-noir-motion=on] .noir-guide-grid>a:hover>svg{transform:translateX(5px)}
+  [data-noir-motion=on] .noir-icon-box{transition:transform .4s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s}
+  [data-noir-motion=on] .noir-service:hover .noir-icon-box,[data-noir-motion=on] .noir-guide-grid>a:hover .noir-icon-box{transform:translateY(-3px) rotate(-5deg);border-color:#32c8f5;box-shadow:0 0 24px #26caff18}
+  [data-noir-motion=on] .noir-rail-track{padding-top:8px;padding-bottom:12px}
+  [data-noir-motion=on] .noir-artist-card,[data-noir-motion=on] .noir-event{transition-property:opacity,transform,translate,border-color,box-shadow;transition-duration:.7s,.8s,.35s,.25s,.35s}
+  [data-noir-motion=on] .noir-artist-card::after{content:"";position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 25%,#b2ebff0d 45%,#b2ebff1b 50%,transparent 72%);transform:translateX(-130%)}
+  [data-noir-motion=on] .noir-artist-card:hover::after{animation:noir-card-sheen .8s ease-out both}
+  [data-noir-motion=on] .noir-mobile-menu{animation:noir-menu-arrive .25s cubic-bezier(.22,1,.36,1) both}
+  [data-noir-motion=on] .noir-mobile-menu>a{animation:noir-copy-arrive .4s cubic-bezier(.22,1,.36,1) both}
+  [data-noir-motion=on] .noir-mobile-menu>a:nth-child(2){animation-delay:.035s}
+  [data-noir-motion=on] .noir-mobile-menu>a:nth-child(3){animation-delay:.07s}
+  [data-noir-motion=on] .noir-mobile-menu>a:nth-child(4){animation-delay:.105s}
+  [data-noir-motion=on] .noir-mobile-menu>a:nth-child(5){animation-delay:.14s}
+  [data-noir-motion=on] .noir-mobile-menu>a:nth-child(6){animation-delay:.175s}
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  [data-noir-motion=on] .noir-artist-card:hover,[data-noir-motion=on] .noir-event:hover{translate:0 -4px;box-shadow:0 8px 28px #001a2a60}
+  [data-noir-motion=on] .noir-rail-arrow:active{scale:.92}
+}
+@keyframes noir-copy-arrive{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes noir-scene-drift{from{transform:scale(1.015) translate3d(0,0,0)}to{transform:scale(1.065) translate3d(-.6%,.3%,0)}}
+@keyframes noir-orbit-drift{from{transform:rotate(-27deg) translate3d(0,0,0)}to{transform:rotate(-24deg) translate3d(-.5%,.3%,0)}}
+@keyframes noir-service-float{from{transform:translate3d(0,0,0)}to{transform:translate3d(-12px,-8px,0)}}
+@keyframes noir-light-breathe{0%,100%{opacity:.65;transform:scale(.88)}50%{opacity:1;transform:scale(1.14)}}
+@keyframes noir-scroll-cue{0%,55%,100%{transform:translateY(0);opacity:.8}70%{transform:translateY(5px);opacity:1}85%{transform:translateY(0);opacity:1}}
+@keyframes noir-line-arrive{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes noir-card-sheen{from{transform:translateX(-130%)}to{transform:translateX(130%)}}
+@keyframes noir-menu-arrive{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.noir-header{column-gap:12px}.noir-header .noir-language{margin-left:auto}[data-noir-motion=on] [data-noir-reveal=pending]{transform:translate3d(0,16px,0)}}
+/* A paused page stays fully readable. System preferences always take precedence. */
+[data-noir-motion=off] .noir-theme *{animation:none!important;transition:none!important}
+[data-noir-motion=off] [data-noir-reveal]{opacity:1!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.noir-theme *{animation:none!important;transition:none!important;scroll-behavior:auto!important}[data-noir-reveal]{opacity:1!important;transform:none!important}}
