@@ -146,6 +146,12 @@ export async function rpc(name: string, params: RpcParams = {}): Promise<DbResul
         );
         return { data: nuid, error: null };
       }
+      case "admin_set_artist_display_order": {
+        const pId = params.p_id as string;
+        const pOrder = Number(params.p_display_order ?? 0);
+        await (pool as any).execute("UPDATE artists SET display_order=?, updated_at=? WHERE id=?", [pOrder, nowIso(), pId]);
+        return { data: true, error: null };
+      }
       case "admin_delete_backoffice_item": {
         const t = tableFor(params.p_kind as string);
         await (pool as any).execute(`DELETE FROM ${t} WHERE id=?`, [params.p_id as string]);
@@ -156,8 +162,8 @@ export async function rpc(name: string, params: RpcParams = {}): Promise<DbResul
         const payload = normalizePayload((params.p_payload as RpcParams) || {}, t);
         if (params.p_kind === "artist" && params.p_id) {
           await (pool as any).execute(
-            "UPDATE artists SET name=?, tagline=?, bio=?, instagram_url=?, updated_at=? WHERE id=?",
-            [payload.name ?? null, payload.tagline ?? null, payload.bio ?? null, payload.instagram_url ?? null, nowIso(), params.p_id]
+            "UPDATE artists SET name=?, tagline=?, bio=?, instagram_url=?, media_sounds=?, media_releases=?, media_videos=?, featured_sound=?, updated_at=? WHERE id=?",
+            [payload.name ?? null, payload.tagline ?? null, payload.bio ?? null, payload.instagram_url ?? null, JSON.stringify(payload.media_sounds ?? []), JSON.stringify(payload.media_releases ?? []), JSON.stringify(payload.media_videos ?? []), JSON.stringify(payload.featured_sound ?? null), nowIso(), params.p_id]
           );
         } else {
           const keys = Object.keys(payload);

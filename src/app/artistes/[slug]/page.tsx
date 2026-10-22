@@ -23,6 +23,14 @@ function normalize(value: string) {
     .replace(/^-+|-+$/g, "");
 }
 
+function safeDecodeSlug(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 function InstagramGlyph() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="instagram-glyph">
@@ -122,7 +130,7 @@ function MediaRail({
 export default async function ArtistPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const { artists, dates } = await getPublicSiteData();
-  const artist = artists.find((item) => item.slug === slug);
+  const artist = artists.find((item) => normalize(item.slug) === normalize(safeDecodeSlug(slug)));
   if (!artist) notFound();
 
   const artistDates = datesForArtist(artist, dates);

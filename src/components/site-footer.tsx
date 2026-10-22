@@ -95,7 +95,7 @@ export function SiteFooter() {
                 ? "Management, communication, partnerships, AI and training for electronic artists."
                 : "Management, communication, partenariats, IA et formation pour artistes électroniques."}
             </p>
-            <a href="https://www.instagram.com/skormagency/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.instagram.com/skorm_agency?mdxt=ZG9zY2J5NjVoNXp1" target="_blank" rel="noreferrer">Instagram</a>
           </div>
 
           <div className="footer-columns">

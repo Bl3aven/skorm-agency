@@ -9,11 +9,8 @@ export async function NoirHome({ en = false }: { en?: boolean }) {
   const { artists, dates } = await getPublicSiteData();
   const base = en ? "/en" : "";
   const upcoming = dates.filter(date => !date.past);
-  const featured = ["paga", "nova", "lucavan", "enkor", "rawpvck"];
-  const ordered = [...artists].sort((a, b) => {
-    const position = (slug: string) => { const p = featured.findIndex(key => slug.toLowerCase().replace(/[^a-z0-9]/g, "").includes(key)); return p < 0 ? 100 : p; };
-    return position(a.slug) - position(b.slug);
-  });
+  // L’ordre est défini dans l’admin (display_order). La liste arrive déjà triée par la DB.
+  const ordered = artists;
   const features = [
     { icon: Link2, title: en ? "Art direction" : "Direction d’image", text: en ? "Positioning, identity, content and visual consistency." : "Positionnement, identité, contenus et cohérence visuelle.", href: "/contact" },
     { icon: CalendarDays, title: en ? "European booking" : "Booking Europe", text: en ? "Dates, options, confirmations, follow-ups and field coordination." : "Dates, options, confirmations, relances et suivi terrain.", href: "/agenda" },

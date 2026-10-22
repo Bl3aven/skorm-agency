@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { getDb } from "@/lib/db";
 import { artists as publicArtists } from "@/lib/content";
 
-export const ARTIST_DEFAULT_PASSWORD = "SKORM26!";
+export const ARTIST_DEFAULT_PASSWORD = process.env.ARTIST_DEFAULT_PASSWORD ?? "";
 const COOKIE_NAME = "SKORM_artist";
 
 export type ArtistLogin = {

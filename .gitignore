@@ -28,3 +28,4 @@ npm-debug.log*
 # Database
 *.sql
 db/*.sql
+src/lib/admin-artist-snapshot.ts
