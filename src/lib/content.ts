@@ -77,7 +77,7 @@ export const artists = [
     heroImage: "/artists/nova-hardlab-photo.png",
     socials: [
       { label: "Instagram", href: "https://www.instagram.com/nova.hardlab/" },
-      { label: "SoundCloud", href: "https://soundcloud.com/nova-hardtechno" },
+      { label: "SoundCloud", href: "https://soundcloud.com/nova-hardlab" },
       { label: "Spotify", href: "https://open.spotify.com/intl-es/artist/2Wbk9pSYcdtsQ7xulYapTU" },
       { label: "TikTok", href: "https://www.tiktok.com/@nova.hardtechno" },
       { label: "Booking", href: "/contact" },
@@ -453,10 +453,10 @@ export const dates = [
 export const artistMedia = {
   "cgl-rave-unit": {
     sounds: [
-      { title: "RAW", meta: "CGL · SoundCloud officiel", cover: "/artists/cgl-latest-dont-do-it.jpg", href: "https://soundcloud.com/rave-unit-918023394/sets/raw" },
+      { title: "RAW", meta: "CGL · SoundCloud officiel", cover: "/artists/cgl-latest-dont-do-it.jpg", href: "https://soundcloud.com/rave-unit-918023394" },
     ],
     releases: [
-      { title: "RAW", meta: "Playlist officielle · SoundCloud", cover: "/artists/cgl-latest-dont-do-it.jpg", href: "https://soundcloud.com/rave-unit-918023394/sets/raw" },
+      { title: "RAW", meta: "Playlist officielle · SoundCloud", cover: "/artists/cgl-latest-dont-do-it.jpg", href: "https://soundcloud.com/rave-unit-918023394" },
     ],
     videos: [],
   },
@@ -509,14 +509,14 @@ export const artistMedia = {
   },
   "nova-hardlab": {
     sounds: [
-      { title: "REBORN SESSION", meta: "N.O.V.A. · SoundCloud", cover: "/artists/nova-reborn-session.jpg", href: "https://soundcloud.com/nova-hardtechno/sesion-reborn-n-o-v-a-mp3" },
-      { title: ".N.O.V.A.", meta: "SoundCloud officiel", cover: "/artists/nova-soundcloud.jpg", href: "https://soundcloud.com/nova-hardtechno" },
+      { title: "REBORN SESSION", meta: "N.O.V.A. · SoundCloud", cover: "/artists/nova-reborn-session.jpg", href: "https://soundcloud.com/nova-hardlab/sesion-reborn-n-o-v-a-mp3" },
+      { title: ".N.O.V.A.", meta: "SoundCloud officiel", cover: "/artists/nova-soundcloud.jpg", href: "https://soundcloud.com/nova-hardlab" },
       { title: ".N.O.V.A.", meta: "Spotify officiel", cover: "/artists/nova-spotify.jpg", href: "https://open.spotify.com/intl-es/artist/2Wbk9pSYcdtsQ7xulYapTU" },
     ],
     releases: [
-      { title: "REBORN SESSION", meta: "Dernière sortie · SoundCloud", cover: "/artists/nova-reborn-session.jpg", href: "https://soundcloud.com/nova-hardtechno/sesion-reborn-n-o-v-a-mp3" },
+      { title: "REBORN SESSION", meta: "Dernière sortie · SoundCloud", cover: "/artists/nova-reborn-session.jpg", href: "https://soundcloud.com/nova-hardlab/sesion-reborn-n-o-v-a-mp3" },
       { title: ".N.O.V.A.", meta: "Spotify officiel", cover: "/artists/nova-spotify.jpg", href: "https://open.spotify.com/intl-es/artist/2Wbk9pSYcdtsQ7xulYapTU" },
-      { title: "NOVA Hardtechno", meta: "SoundCloud officiel", cover: "/artists/nova-soundcloud.jpg", href: "https://soundcloud.com/nova-hardtechno" },
+      { title: "NOVA Hardtechno", meta: "SoundCloud officiel", cover: "/artists/nova-soundcloud.jpg", href: "https://soundcloud.com/nova-hardlab" },
     ],
     videos: [],
   },
